@@ -101,12 +101,13 @@ get_header();
 
     .hero-image-container img { 
         width: 90%; 
-        height: 90%; /* Stretches to the very top */
+        height: 87%; /* Stretches to the very top */
         display: block;
         /* Matches the blob shape with smaller radius on left side */
         border-radius: 50px 180px 0 0; 
         object-fit: cover; 
         object-position: center bottom;
+        margin-left: -130px; /* Added to shift the image slightly to the left */
     }
 
     /* Stats Section */
@@ -172,6 +173,7 @@ get_header();
         .hero-image-container { 
             align-items: center; /* Center image on mobile */
             margin-top: 20px; /* Add some top margin for spacing */
+            /* Removed margin-left to keep image centered on mobile */
         }
         .hero-image-container img { 
             height: auto; 
@@ -179,6 +181,7 @@ get_header();
             max-width: 400px; /* Prevent it from being too large */
             border-radius: 40px; /* Adjust border-radius for mobile */
             object-position: center; /* Center the image */
+            margin-left: 0; /* Ensure no left margin on mobile for proper centering */
         }
     }
 
