@@ -34,7 +34,7 @@ get_header();
     }
     
     .hero-text h1 {
-        font-size: 40px;
+        font-size: 42px;
         font-weight: 700;
         line-height: 1.5;
         margin-bottom: 25px;
