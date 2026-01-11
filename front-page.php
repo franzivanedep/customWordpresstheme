@@ -12,67 +12,68 @@ get_header();
         font-family: 'Poppins', sans-serif;
     }
 
-    /* Hero Section */
+    /* ================= HERO SECTION ================= */
     .phoenix-hero {
         background-color: #0b1120;
         color: #ffffff;
-        padding: 0 10%; /* Removed top/bottom padding so image can stretch */
+        padding: 0 10%;
         display: flex;
-        align-items: stretch; /* Stretches children to full section height */
+        align-items: stretch;
         justify-content: space-between;
         gap: 60px;
-        min-height: 600px; /* Ensures a substantial height for the stretch effect */
+        min-height: 600px;
         overflow: hidden;
     }
 
     .hero-text { 
         flex: 1.2; 
-        padding: 100px 0; /* Vertical padding moves the text, not the section */
+        padding: 100px 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
     
-    /* Strict Two-Liner Heading */
     .hero-text h1 {
         font-size: 40px;
         font-weight: 700;
-        line-height: 1.1;
+        line-height: 1.5;
         margin-bottom: 25px;
-        max-width: 460px; /* Tight width to force exactly two lines */
+        max-width: 460px;
         margin-top: 0;
     }
 
-.hero-features {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 35px;
-}
+    /* ================= FEATURES ================= */
+    .hero-features {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 35px;
+    }
 
-.hero-features li {
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    font-size: 16px;
-    color: #cbd5e1;
-    gap: 8px;  /* Small gap to keep checkmark close to text. Change to 4px for even closer, or 12px for a bit more space. */
-    margin-left: 160px;  /* Shifts the entire item (checkmark + text) to the right. Adjust or remove if not needed. */
-}
+    .hero-features li {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 18px;
+        color: #ffffff;
+        margin-bottom: 12px;
+        margin-left: 160px; /* desktop offset */
+    }
 
-.hero-features li::before {
-    content: '✔';
-    color: #00d084;
-    font-weight: bold;
-    /* No gap here—it's not valid on pseudo-elements. Spacing is handled by the li's gap. */
-}
+    .hero-features li::before {
+        content: '✔';
+        color: #00d084;
+        font-weight: bold;
+    }
+
+    /* ================= BUTTON ================= */
     .hero-btns { 
         display: flex; 
-        gap: 20px; 
-        align-items: flex-start; 
-        justify-content: center; /* Added to center the button according to the text */
+        justify-content: center;
     }
     
-    .btn-col { text-align: center; }
+    .btn-col {
+        text-align: center;
+    }
 
     .btn-green {
         background-color: #00d084;
@@ -92,25 +93,24 @@ get_header();
         margin-top: 10px;
     }
 
-    /* Image stretches to top and bottom, slightly lower */
+    /* ================= IMAGE ================= */
     .hero-image-container { 
         flex: 1; 
         display: flex;
-        align-items: flex-end; /* Keeps image base flush at bottom */
+        align-items: flex-end;
     }
 
     .hero-image-container img { 
         width: 90%; 
-        height: 87%; /* Stretches to the very top */
+        height: 87%;
         display: block;
-        /* Matches the blob shape with smaller radius on left side */
-        border-radius: 50px 180px 0 0; 
+        border-radius: 50px 180px 0 0;
         object-fit: cover; 
         object-position: center bottom;
-        margin-left: -130px; /* Added to shift the image slightly to the left */
+        margin-left: -130px;
     }
 
-    /* Stats Section */
+    /* ================= STATS ================= */
     .phoenix-stats {
         padding: 80px 10%;
         background: #ffffff;
@@ -132,81 +132,83 @@ get_header();
         margin-top: 8px;
     }
 
+    /* ================= TABLET & MOBILE ================= */
     @media (max-width: 992px) {
+
         .phoenix-hero { 
-            padding: 60px 5% 0 5%; 
-            flex-direction: column; 
-            text-align: center; 
-            min-height: auto; 
-            gap: 40px; /* Reduce gap for mobile stacking */
+            padding: 60px 5% 0;
+            flex-direction: column;
+            min-height: auto;
+            gap: 40px;
         }
-        .hero-text { 
-            padding: 0 0 40px 0; 
-            flex: none; /* Remove flex grow to allow natural height */
+
+        .hero-text {
+            padding: 0 0 40px;
         }
-        .hero-text h1 { 
-            max-width: 100%; 
-            font-size: 32px; /* Smaller font for mobile to fit better */
-            line-height: 1.2; /* Adjust line-height for readability */
+
+        .hero-text h1 {
+            max-width: 100%;
+            font-size: 32px;
+            line-height: 1.2;
+            text-align: center;
         }
+
+        /* KEEP SAME ALIGNMENT AS DESKTOP */
         .hero-features {
-            text-align: center; /* Center the features list text */
+            text-align: left;
         }
-        .hero-features li { 
-            justify-content: center; 
-            margin-left: 0; /* Remove left margin to center properly on mobile */
-            font-size: 14px; /* Slightly smaller font for mobile */
+
+        .hero-features li {
+            justify-content: flex-start;
+            margin-left: 0; /* remove desktop offset */
+            font-size: 14px;
         }
-        .hero-btns { 
-            justify-content: center; 
-            flex-direction: column; /* Stack buttons vertically on mobile if needed, but since only one, center it */
-            align-items: center; /* Center horizontally in column layout */
-            gap: 10px; /* Reduce gap */
+
+        .hero-btns {
+            justify-content: center;
         }
+
         .btn-green {
-            padding: 14px 30px; /* Smaller padding for mobile */
-            font-size: 16px; /* Smaller font */
+            padding: 14px 30px;
+            font-size: 16px;
         }
-        .btn-subtext {
-            font-size: 12px; /* Smaller subtext */
+
+        .hero-image-container {
+            align-items: center;
         }
-        .hero-image-container { 
-            align-items: center; /* Center image on mobile */
-            margin-top: 20px; /* Add some top margin for spacing */
-            /* Removed margin-left to keep image centered on mobile */
-        }
-        .hero-image-container img { 
-            height: auto; 
-            width: 100%; /* Full width on mobile */
-            max-width: 400px; /* Prevent it from being too large */
-            border-radius: 40px; /* Adjust border-radius for mobile */
-            object-position: center; /* Center the image */
-            margin-left: 0; /* Ensure no left margin on mobile for proper centering */
+
+        .hero-image-container img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            margin-left: 0;
         }
     }
 
-    /* Additional mobile refinements for smaller screens */
+    /* ================= SMALL MOBILE ================= */
     @media (max-width: 576px) {
-        .phoenix-hero {
-            padding: 40px 5% 0 5%;
-        }
+
         .hero-text h1 {
-            font-size: 28px; /* Even smaller for very small screens */
+            font-size: 28px;
         }
+
         .hero-features li {
             font-size: 13px;
         }
+
         .btn-green {
             padding: 12px 25px;
             font-size: 15px;
         }
+
         .phoenix-stats {
             padding: 60px 5%;
-            flex-direction: column; /* Stack stats vertically on very small screens */
+            flex-direction: column;
             gap: 40px;
         }
+
         .stat-box h2 {
-            font-size: 40px; /* Smaller stats for mobile */
+            font-size: 40px;
         }
     }
 </style>
@@ -215,14 +217,13 @@ get_header();
 
     <section class="phoenix-hero">
         <div class="hero-text">
-            <h1>Maak moeiteloos een winstgevende website</h1> <!-- Updated to display the specified text -->
+            <h1>Maak moeiteloos een winstgevende website</h1>
 
             <ul class="hero-features">
                 <?php 
                 $features = get_field('hero_features'); 
                 if ($features) {
-                    $features_array = array_filter(array_map('trim', explode("\n", $features)));
-                    foreach($features_array as $feature) {
+                    foreach (array_filter(array_map('trim', explode("\n", $features))) as $feature) {
                         echo '<li>' . esc_html($feature) . '</li>';
                     }
                 }
@@ -240,31 +241,29 @@ get_header();
         </div>
 
         <div class="hero-image-container">
-            <?php 
-            $hero_image = get_field('hero_image'); 
-            if ($hero_image): ?>
+            <?php $hero_image = get_field('hero_image'); ?>
+            <?php if ($hero_image): ?>
                 <img src="<?php echo esc_url($hero_image['url']); ?>" alt="<?php echo esc_attr($hero_image['alt']); ?>">
             <?php endif; ?>
         </div>
     </section>
 
     <section class="phoenix-stats">
-        <?php for ($i = 1; $i <= 3; $i++) : 
-            $stat_title = get_field("stat{$i}_title");
-            $stat_desc = get_field("stat{$i}_desc");
-            if ($stat_title || $stat_desc): ?>
+        <?php for ($i = 1; $i <= 3; $i++): ?>
+            <?php if (get_field("stat{$i}_title") || get_field("stat{$i}_desc")): ?>
                 <div class="stat-box">
-                    <h2><?php echo esc_html($stat_title); ?></h2>
-                    <p><?php echo esc_html($stat_desc); ?></p>
+                    <h2><?php the_field("stat{$i}_title"); ?></h2>
+                    <p><?php the_field("stat{$i}_desc"); ?></p>
                 </div>
-        <?php endif; endfor; ?>
+            <?php endif; ?>
+        <?php endfor; ?>
     </section>
 
     <?php
-    while ( have_posts() ) :
+    while (have_posts()) {
         the_post();
         the_content();
-    endwhile;
+    }
     ?>
 
 </main>
